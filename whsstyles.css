@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Notable&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/* SET UP */
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  color: #01256F;
+  background-color: #F65C02;
+  margin: 0 auto;
+  max-width: 95%;
+  font-weight: bold;
+}
+
+
+
+.item  {
+  padding: 8px;
+  background-color: white;
+  border: 3px hidden #F65C02;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.height-50 {
+  height: 50vh;
+}
+
+h1 {
+    text-align: center;
+    font-size:55px;
+}
+
+/* Header Nav Right and Left sides */
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+
+.task-3-2 .header {
+  grid-area: header;
+}
+
+.task-3-2 .navigation {
+  grid-area: nav;
+  text-align: center;
+}
+
+.task-3-2 .ads {
+  grid-area: ads;
+  font-size: 20px;
+}
+
+.task-3-2 .sidebar {
+  grid-area: sidebar;
+  font-size: 20px;
+}
+
+.task-3-2 .main {
+  grid-area: main;
+  text-align: left;
+}
+
+.task-3-2 .footer {
+  grid-area: footer;
+  text-align: center;
+}
+
+.task-3-2.container {
+  display: grid;
+  height: 100vh;
+
+  gap: 24px;
+
+  /* Creating 6 rows and 3rd row expands as much as it can*/  
+  grid-template-rows: auto auto 1fr auto auto auto;
+
+  /* Defining the template*/
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "sidebar"
+    "ads"
+    "footer";
+}
+
+@media (min-width: 720px) {
+  .task-3-2.container {
+    /* Creating 4 rows and the 3rd row expands as much as it can*/
+    grid-template-rows: auto auto 1fr auto;
+
+    /* Defining the template (3 columns)*/
+    grid-template-areas:
+      "header header header"
+      "nav nav nav "
+      "sidebar main main"
+      "ads footer footer";
+  }
+}
+
+@media (min-width: 1020px) {
+  .task-3-2.container {
+    /* Creating 4 rows and the 3rd row expands as much as it can*/
+    grid-template-rows: auto auto 1fr auto;
+
+    /* Defining the template (4 columns)*/
+    grid-template-areas:
+      "header header header header"
+      "sidebar nav nav ads"
+      "sidebar main main ads"
+      "footer footer footer footer";
+  }
+}
+
+.navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #01256F;
+  border-radius: 15px;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #F65C02;
+}
